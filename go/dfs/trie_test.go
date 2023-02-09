@@ -67,12 +67,12 @@ func longestMatchingWord(dictionary []string, chars string) string {
 	return result
 }
 
-func TestLongestMatchingWord(t *testing.T){
-	tt := []struct{
-		name string
+func TestLongestMatchingWord(t *testing.T) {
+	tt := []struct {
+		name       string
 		dictionary []string
-		chars string
-		result string
+		chars      string
+		result     string
 	}{
 		{"Test 1", []string{"when", "what", "whatthen", "whatnow"}, "whatno", "what"},
 		{"Test 2", []string{"when", "what", "whatthen", "whatnow"}, "whatnwo", "whatnow"},
@@ -80,7 +80,7 @@ func TestLongestMatchingWord(t *testing.T){
 	}
 
 	for _, tc := range tt {
-		t.Run(tc.name, func(t *testing.T){
+		t.Run(tc.name, func(t *testing.T) {
 			result := longestMatchingWord(tc.dictionary, tc.chars)
 			if result != tc.result {
 				t.Errorf("Expected %v, got %v", tc.result, result)

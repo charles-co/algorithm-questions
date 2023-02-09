@@ -14,22 +14,23 @@ package randoms_test
 import (
 	"testing"
 )
+
 func convert(s string, numRows int) string {
-    
+
 	n := len(s)
 	answer := ""
 
-	diff := 2 * numRows - 2
+	diff := 2*numRows - 2
 
 	for i := 0; i < numRows; i++ {
 		index := i
 
 		for index < n {
 			answer += string(s[index])
-			if i != 0 && i != numRows - 1 {
-				diagonal_diff := diff - 2 * i
-				if index + diagonal_diff < n {
-					answer += string(s[index + diagonal_diff])
+			if i != 0 && i != numRows-1 {
+				diagonal_diff := diff - 2*i
+				if index+diagonal_diff < n {
+					answer += string(s[index+diagonal_diff])
 				}
 			}
 			index += diff
@@ -37,14 +38,14 @@ func convert(s string, numRows int) string {
 	}
 
 	return string(answer)
-    
+
 }
 
 func TestZigZagConversion(t *testing.T) {
 	tt := []struct {
-		name string
-		input string
-		numRows int
+		name     string
+		input    string
+		numRows  int
 		expected string
 	}{
 		{name: "Test 1", input: "PAYPALISHIRING", numRows: 3, expected: "PAHNAPLSIIGYIR"},
@@ -61,4 +62,3 @@ func TestZigZagConversion(t *testing.T) {
 		})
 	}
 }
-

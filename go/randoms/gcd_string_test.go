@@ -1,6 +1,5 @@
 package randoms_test
 
-
 import (
 	"testing"
 )
@@ -17,16 +16,16 @@ func gcd(a, b int) int {
 }
 
 func gcdOfStrings(str1, str2 string) string {
-    if str1 + str2 != str2 + str1 {
+	if str1+str2 != str2+str1 {
 		return ""
 	}
 	return str1[:gcd(len(str1), len(str2))]
 }
 
 func TestGcdOfStrings(t *testing.T) {
-	tt := []struct{
-		str1 string
-		str2 string
+	tt := []struct {
+		str1     string
+		str2     string
 		expected string
 	}{
 		{"ABCABC", "ABC", "ABC"},
@@ -36,7 +35,7 @@ func TestGcdOfStrings(t *testing.T) {
 	}
 
 	for _, tc := range tt {
-		t.Run(tc.str1 + tc.str2, func(t *testing.T) {
+		t.Run(tc.str1+tc.str2, func(t *testing.T) {
 			if got := gcdOfStrings(tc.str1, tc.str2); got != tc.expected {
 				t.Errorf("expected %s, got %s", tc.expected, got)
 			}
