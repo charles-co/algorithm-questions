@@ -1,4 +1,4 @@
-package randoms_test
+package tests
 
 // Given an integer array nums, return an array answer such that answer[i] is equal to the product of all the elements of nums except nums[i].
 
@@ -7,29 +7,9 @@ package randoms_test
 // You must write an algorithm that runs in O(n) time and without using the division operation.
 
 import (
+	"github.com/charles-co/algorithm_questions/randoms"
 	"testing"
 )
-
-func productExceptSelf(nums []int) []int {
-	ans := make([]int, len(nums))
-
-	for i := range ans {
-		ans[i] = 1
-	}
-
-	suffix := 1
-	prefix := 1
-
-
-	for i := 0; i < len(nums); i++ {
-		ans[i] *= prefix
-		prefix *= nums[i]
-		ans[len(ans) -i -1] *= suffix
-		suffix *= nums[len(ans) -i -1]
-
-	}
-	return ans
-}
 
 func TestProductExceptSelf(t *testing.T) {
 	tt := []struct {
@@ -43,7 +23,7 @@ func TestProductExceptSelf(t *testing.T) {
 
 	for _, tc := range tt {
 		t.Run(tc.name, func(t *testing.T) {
-			result := productExceptSelf(tc.input)
+			result := randoms.ProductExceptSelf(tc.input)
 			if len(result) != len(tc.expected) {
 				t.Errorf("expected %v, got %v", tc.expected, result)
 			}
@@ -53,5 +33,5 @@ func TestProductExceptSelf(t *testing.T) {
 				}
 			}
 		})
-	}	
+	}
 }

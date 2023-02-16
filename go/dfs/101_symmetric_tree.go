@@ -2,7 +2,7 @@ package dfs
 
 // Definition for a binary tree node.
 
-func isSymmetric(root *TreeNode) bool {
+func IsSymmetric(root *TreeNode) bool {
 	return check(root.Left, root.Right)
 }
 

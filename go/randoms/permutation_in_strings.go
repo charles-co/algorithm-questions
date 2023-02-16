@@ -1,4 +1,4 @@
-package randoms_test
+package randoms
 
 // Given two strings s1 and s2, return true if s2 contains a permutation of s1, or false otherwise.
 
@@ -13,11 +13,8 @@ package randoms_test
 
 // Input: s1 = "ab", s2 = "eidboaoo"
 // Output: false
-import (
-	"testing"
-)
 
-func checkInclusion(s1 string, s2 string) bool {
+func CheckInclusion(s1 string, s2 string) bool {
 	n1 := len(s1)
 	n2 := len(s2)
 
@@ -40,26 +37,4 @@ func checkInclusion(s1 string, s2 string) bool {
 
 	return false
 
-}
-
-func TestPermutationInStrings(t *testing.T) {
-	tt := []struct {
-		name     string
-		s1       string
-		s2       string
-		expected bool
-	}{
-		{name: "Test 1", s1: "ab", s2: "eidbaooo", expected: true},
-		{name: "Test 2", s1: "ab", s2: "eidboaoo", expected: false},
-		{name: "Test 3", s1: "adc", s2: "dcda", expected: true},
-	}
-
-	for _, tc := range tt {
-		t.Run(tc.name, func(t *testing.T) {
-			result := checkInclusion(tc.s1, tc.s2)
-			if result != tc.expected {
-				t.Errorf("expected %v, got %v", tc.expected, result)
-			}
-		})
-	}
 }

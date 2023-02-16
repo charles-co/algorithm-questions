@@ -1,30 +1,9 @@
-package randoms_test
+package tests
 
 import (
+	"github.com/charles-co/algorithm_questions/randoms"
 	"testing"
 )
-func addToArrayForm(A []int, K int) []int {
-	for i := len(A) - 1; i > -1; i-- {
-		A[i] += K % 10
-		K /= 10
-		if A[i] > 9 {
-			A[i] -= 10
-			K++
-		}
-	}
-	res := A[:]
-
-	for K > 0 {
-		tmp := make([]int, len(res)+1)
-		copy(tmp[1:], res)
-		tmp[0] = K % 10
-		K /= 10
-		res = tmp
-	}
-
-	return res
-}
-
 
 func TestAddToArrayForm(t *testing.T) {
 	tt := []struct {
@@ -41,7 +20,7 @@ func TestAddToArrayForm(t *testing.T) {
 
 	for _, tc := range tt {
 		t.Run(tc.name, func(t *testing.T) {
-			result := addToArrayForm(tc.A, tc.K)
+			result := randoms.AddToArrayForm(tc.A, tc.K)
 			if len(result) != len(tc.expected) {
 				t.Errorf("expected %v, got %v", tc.expected, result)
 			}

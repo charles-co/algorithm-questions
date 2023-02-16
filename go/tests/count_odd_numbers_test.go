@@ -1,23 +1,11 @@
-package randoms_test
+package tests
 
 // Given two non-negative integers low and high. Return the count of odd numbers between low and high (inclusive).
 
 import (
+	"github.com/charles-co/algorithm_questions/randoms"
 	"testing"
 )
-
-func countOdds(low int, high int) int {
-	if (low & 1 == 0){
-		low++
-	}
-
-	if (low > high) {
-		return 0
-	} else {
-		return ((high - low) / 2) + 1
-	}
-}
-
 
 func TestCountOdds(t *testing.T) {
 	tt := []struct {
@@ -32,7 +20,7 @@ func TestCountOdds(t *testing.T) {
 
 	for _, tc := range tt {
 		t.Run(tc.name, func(t *testing.T) {
-			result := countOdds(tc.low, tc.high)
+			result := randoms.CountOdds(tc.low, tc.high)
 			if result != tc.expected {
 				t.Errorf("expected %v, got %v", tc.expected, result)
 			}

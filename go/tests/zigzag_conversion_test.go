@@ -9,37 +9,12 @@
 
 // string convert(string s, int numRows);
 
-package randoms_test
+package tests
 
 import (
+	"github.com/charles-co/algorithm_questions/randoms"
 	"testing"
 )
-
-func convert(s string, numRows int) string {
-
-	n := len(s)
-	answer := ""
-
-	diff := 2*numRows - 2
-
-	for i := 0; i < numRows; i++ {
-		index := i
-
-		for index < n {
-			answer += string(s[index])
-			if i != 0 && i != numRows-1 {
-				diagonal_diff := diff - 2*i
-				if index+diagonal_diff < n {
-					answer += string(s[index+diagonal_diff])
-				}
-			}
-			index += diff
-		}
-	}
-
-	return string(answer)
-
-}
 
 func TestZigZagConversion(t *testing.T) {
 	tt := []struct {
@@ -55,7 +30,7 @@ func TestZigZagConversion(t *testing.T) {
 
 	for _, tc := range tt {
 		t.Run(tc.name, func(t *testing.T) {
-			result := convert(tc.input, tc.numRows)
+			result := randoms.Convert(tc.input, tc.numRows)
 			if result != tc.expected {
 				t.Errorf("expected %v, got %v", tc.expected, result)
 			}
