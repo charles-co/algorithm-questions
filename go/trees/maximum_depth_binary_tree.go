@@ -1,4 +1,4 @@
-package dfs
+package trees
 
 // Given the root of a binary tree, return its maximum depth.
 

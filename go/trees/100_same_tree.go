@@ -1,7 +1,7 @@
 // Problem: https://leetcode.com/problems/same-tree/
 //  Definition for a binary tree node.
 
-package dfs
+package trees
 
 type TreeNode struct {
 	Val   int

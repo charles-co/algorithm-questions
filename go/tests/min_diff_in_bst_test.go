@@ -2,29 +2,30 @@ package tests
 
 import (
 	"testing"
-	"github.com/charles-co/algorithm_questions/dfs"
+
+	"github.com/charles-co/algorithm_questions/trees"
 )
 
 func TestMinDiffBST(t *testing.T) {
 	tt := []struct {
-		name string
-		input *dfs.TreeNode
+		name     string
+		input    *trees.TreeNode
 		expected int
 	}{
 		{
 			name: "Example 1",
-			input: &dfs.TreeNode{
-					Val: 4,
-				Left: &dfs.TreeNode{
+			input: &trees.TreeNode{
+				Val: 4,
+				Left: &trees.TreeNode{
 					Val: 2,
-					Left: &dfs.TreeNode{
+					Left: &trees.TreeNode{
 						Val: 1,
 					},
-					Right: &dfs.TreeNode{
+					Right: &trees.TreeNode{
 						Val: 3,
 					},
 				},
-				Right: &dfs.TreeNode{
+				Right: &trees.TreeNode{
 					Val: 6,
 				},
 			},
@@ -32,11 +33,11 @@ func TestMinDiffBST(t *testing.T) {
 		},
 		{
 			name: "Example 2",
-			input: &dfs.TreeNode{
+			input: &trees.TreeNode{
 				Val: 1,
-				Right: &dfs.TreeNode{
+				Right: &trees.TreeNode{
 					Val: 3,
-					Left: &dfs.TreeNode{
+					Left: &trees.TreeNode{
 						Val: 2,
 					},
 				},
@@ -45,17 +46,17 @@ func TestMinDiffBST(t *testing.T) {
 		},
 		{
 			name: "Example 3",
-			input: &dfs.TreeNode{
+			input: &trees.TreeNode{
 				Val: 236,
-				Left: &dfs.TreeNode{
+				Left: &trees.TreeNode{
 					Val: 104,
-					Right: &dfs.TreeNode{
+					Right: &trees.TreeNode{
 						Val: 227,
 					},
 				},
-				Right: &dfs.TreeNode{
+				Right: &trees.TreeNode{
 					Val: 701,
-					Right: &dfs.TreeNode{
+					Right: &trees.TreeNode{
 						Val: 911,
 					},
 				},
@@ -66,7 +67,7 @@ func TestMinDiffBST(t *testing.T) {
 
 	for _, tc := range tt {
 		t.Run(tc.name, func(t *testing.T) {
-			got := dfs.MinDiffBST(tc.input)
+			got := trees.MinDiffBST(tc.input)
 			if got != tc.expected {
 				t.Errorf("got %v, expected %v", got, tc.expected)
 			}

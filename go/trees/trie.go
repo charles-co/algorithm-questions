@@ -1,4 +1,4 @@
-package dfs
+package trees
 
 type TrieNode struct {
 	children map[rune]*TrieNode

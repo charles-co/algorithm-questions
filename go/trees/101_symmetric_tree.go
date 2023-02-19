@@ -1,4 +1,4 @@
-package dfs
+package trees
 
 // Definition for a binary tree node.
 

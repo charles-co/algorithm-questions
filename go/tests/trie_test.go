@@ -1,8 +1,9 @@
 package tests
 
 import (
-	"github.com/charles-co/algorithm_questions/dfs"
 	"testing"
+
+	"github.com/charles-co/algorithm_questions/trees"
 )
 
 func TestLongestMatchingWord(t *testing.T) {
@@ -19,7 +20,7 @@ func TestLongestMatchingWord(t *testing.T) {
 
 	for _, tc := range tt {
 		t.Run(tc.name, func(t *testing.T) {
-			result := dfs.LongestMatchingWord(tc.dictionary, tc.chars)
+			result := trees.LongestMatchingWord(tc.dictionary, tc.chars)
 			if result != tc.result {
 				t.Errorf("Expected %v, got %v", tc.result, result)
 			}
