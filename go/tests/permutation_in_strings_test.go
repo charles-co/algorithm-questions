@@ -18,31 +18,6 @@ import (
 	"testing"
 )
 
-func checkInclusion(s1 string, s2 string) bool {
-	n1 := len(s1)
-	n2 := len(s2)
-
-	con_s1 := [26]int{}
-	con_s2 := [26]int{}
-
-	for i := 0; i < n1; i++ {
-		con_s1[s1[i]-'a']++
-	}
-
-	for i := 0; i < n2; i++ {
-		con_s2[s2[i]-'a']++
-		if i >= n1 {
-			con_s2[s2[i-n1]-'a']--
-		}
-		if con_s1 == con_s2 {
-			return true
-		}
-	}
-
-	return false
-
-}
-
 func TestPermutationInStrings(t *testing.T) {
 	tt := []struct {
 		name     string
