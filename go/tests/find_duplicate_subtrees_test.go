@@ -1,14 +1,14 @@
 package tests
 
 import (
-	"testing"
 	"github.com/charles-co/algorithm_questions/trees"
+	"testing"
 )
 
-func TestFindDuplicateSubtrees(t *testing.T){
-	tt := []struct{
-		name string
-		input *trees.TreeNode
+func TestFindDuplicateSubtrees(t *testing.T) {
+	tt := []struct {
+		name     string
+		input    *trees.TreeNode
 		expected []*trees.TreeNode
 	}{
 		{
@@ -49,7 +49,7 @@ func TestFindDuplicateSubtrees(t *testing.T){
 	}
 
 	for _, tc := range tt {
-		t.Run(tc.name, func(t *testing.T){
+		t.Run(tc.name, func(t *testing.T) {
 			actual := trees.FindDuplicateSubtrees(tc.input)
 			if len(actual) != len(tc.expected) {
 				t.Errorf("Expected %d, got %d", len(tc.expected), len(actual))
