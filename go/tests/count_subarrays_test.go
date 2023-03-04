@@ -5,36 +5,33 @@ import (
 	"testing"
 )
 
-func TestStrSTr(t *testing.T) {
+func TestCountSubarrays(t *testing.T) {
 	tt := []struct {
 		name     string
-		input    string
-		input2   string
+		input    []int
+		maxK     int
+		minK     int
 		expected int
 	}{
 		{
 			name:     "Example 1",
-			input:    "hello",
-			input2:   "ll",
+			input:    []int{1, 3, 5, 2, 7, 5},
+			maxK:     5,
+			minK:     1,
 			expected: 2,
 		},
 		{
 			name:     "Example 2",
-			input:    "aaaaa",
-			input2:   "bba",
-			expected: -1,
-		},
-		{
-			name:     "Example 3",
-			input:    "a",
-			input2:   "a",
-			expected: 0,
+			input:    []int{1, 1, 1, 1},
+			maxK:     1,
+			minK:     1,
+			expected: 10,
 		},
 	}
 
 	for _, tc := range tt {
 		t.Run(tc.name, func(t *testing.T) {
-			actual := randoms.StrStr(tc.input, tc.input2)
+			actual := randoms.CountSubarrays(tc.input, tc.maxK, tc.minK)
 			if actual != tc.expected {
 				t.Errorf("Expected %d, got %d", tc.expected, actual)
 			}
