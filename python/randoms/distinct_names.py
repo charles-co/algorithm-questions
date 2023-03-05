@@ -6,7 +6,6 @@
 # Otherwise, it is not a valid name.
 # Return the number of distinct valid names for the company.
 
-
 from typing import List
 
 class Solution:
