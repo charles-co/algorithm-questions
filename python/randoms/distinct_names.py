@@ -21,4 +21,3 @@ class Solution:
                 mutuals = len(groups[i] & groups[j])
                 result += 2 * (len(groups[i]) - mutuals) * (len(groups[j]) - mutuals)
         return result
-    
