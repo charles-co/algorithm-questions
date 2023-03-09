@@ -20,7 +20,6 @@ package randoms
 
 // Input: piles = [30,11,23,4,20], h = 6
 // Output: 23
- 
 
 // Constraints:
 
