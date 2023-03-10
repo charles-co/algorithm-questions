@@ -1,8 +1,9 @@
 package tests
 
 import (
-	"github.com/charles-co/algorithm_questions/randoms"
 	"testing"
+
+	"github.com/charles-co/algorithm_questions/randoms"
 )
 
 func TestDetectCycle(t *testing.T) {
