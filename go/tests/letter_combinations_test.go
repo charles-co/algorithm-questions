@@ -1,8 +1,8 @@
 package tests
 
 import (
-	"testing"
 	"github.com/charles-co/algorithm_questions/randoms"
+	"testing"
 )
 
 func TestLetterCombinations(t *testing.T) {
