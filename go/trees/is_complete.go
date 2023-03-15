@@ -12,10 +12,15 @@ func IsComplete(root *TreeNode) bool {
 	for len(queue) > 0 {
 
 		var next []*TreeNode
+		null := false
 
 		for _, node := range queue {
 
 			if node.Left != nil {
+				if null {
+					return false
+				}
+
 				if node.Right == nil {
 					if len(next) & 1 != 0 {
 						return false
@@ -26,10 +31,14 @@ func IsComplete(root *TreeNode) bool {
 
 			if node.Right != nil {
 
-				if node.Left == nil {
+				if node.Left == nil || null{
 					return false
 				}
 				next = append(next, node.Right)
+			}
+
+			if node.Left == nil && node.Right == nil {
+				null = true
 			}
 		}
 		queue = next
