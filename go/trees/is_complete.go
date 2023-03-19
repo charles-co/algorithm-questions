@@ -22,7 +22,7 @@ func IsComplete(root *TreeNode) bool {
 				}
 
 				if node.Right == nil {
-					if len(next) & 1 != 0 {
+					if len(next)&1 != 0 {
 						return false
 					}
 				}
@@ -31,7 +31,7 @@ func IsComplete(root *TreeNode) bool {
 
 			if node.Right != nil {
 
-				if node.Left == nil || null{
+				if node.Left == nil || null {
 					return false
 				}
 				next = append(next, node.Right)
@@ -42,7 +42,7 @@ func IsComplete(root *TreeNode) bool {
 			}
 		}
 		queue = next
-		
+
 	}
 	return true
 }

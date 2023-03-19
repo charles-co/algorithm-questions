@@ -25,7 +25,7 @@ func BuildTree(postorder []int, inorder []int) *TreeNode {
 }
 
 func BuildTreeRecursive(postorder []int, inorder []int) *TreeNode {
-	
+
 	rootIdx := len(postorder) - 1
 	inorderMap := make(map[int]int)
 
@@ -43,13 +43,12 @@ func BuildTreeRecursive(postorder []int, inorder []int) *TreeNode {
 		root := &TreeNode{Val: postorder[rootIdx]}
 		rootIdx--
 
-		root.Right = build(inorderMap[root.Val] + 1, high)
-		root.Left = build(lo, inorderMap[root.Val] - 1)
+		root.Right = build(inorderMap[root.Val]+1, high)
+		root.Left = build(lo, inorderMap[root.Val]-1)
 
 		return root
 	}
 
-
-	return build(0, len(inorder)-1)	
+	return build(0, len(inorder)-1)
 
 }

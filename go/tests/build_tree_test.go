@@ -1,20 +1,21 @@
 package tests
 
 import (
-	"testing"
 	"github.com/charles-co/algorithm_questions/trees"
+	"testing"
 )
+
 func TestBuildTree(t *testing.T) {
 	tt := []struct {
-		name string
+		name      string
 		postorder []int
-		inorder []int
-		expected *trees.TreeNode
+		inorder   []int
+		expected  *trees.TreeNode
 	}{
 		{
-			name: "Test 1",
+			name:      "Test 1",
 			postorder: []int{9, 15, 7, 20, 3},
-			inorder: []int{9, 3, 15, 20, 7},
+			inorder:   []int{9, 3, 15, 20, 7},
 			expected: &trees.TreeNode{
 				Val: 3,
 				Left: &trees.TreeNode{
@@ -32,13 +33,13 @@ func TestBuildTree(t *testing.T) {
 			},
 		},
 		{
-			name: "Test 2",
+			name:      "Test 2",
 			postorder: []int{-1},
-			inorder: []int{-1},
+			inorder:   []int{-1},
 			expected: &trees.TreeNode{
 				Val: -1,
 			},
-		},	
+		},
 	}
 
 	for _, tc := range tt {

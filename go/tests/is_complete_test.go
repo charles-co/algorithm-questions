@@ -1,26 +1,26 @@
 package tests
 
 import (
-	"testing"
 	"github.com/charles-co/algorithm_questions/trees"
+	"testing"
 )
 
-func TestIsComplete(t *testing.T){
+func TestIsComplete(t *testing.T) {
 
 	tt := []struct {
-		name string
-		root *trees.TreeNode
+		name     string
+		root     *trees.TreeNode
 		expected bool
 	}{
 		{
-			name: "Test 1", 
+			name: "Test 1",
 			root: &trees.TreeNode{
-				Val: 1, 
+				Val: 1,
 				Left: &trees.TreeNode{
-					Val: 2, 
+					Val: 2,
 					Left: &trees.TreeNode{
 						Val: 4,
-					}, 
+					},
 					Right: &trees.TreeNode{
 						Val: 5,
 					},
