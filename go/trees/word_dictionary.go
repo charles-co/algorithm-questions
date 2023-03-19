@@ -21,7 +21,7 @@ func (n *Node) AddWord(word string) {
 
 func (n *Node) Search(word string) bool {
 
-	var res bool
+	res := false
 
 	var dfs func(node *Node, word string)
 	dfs = func(node *Node, word string) {
@@ -47,5 +47,6 @@ func (n *Node) Search(word string) bool {
 
 	}
 	dfs(n, word)
-	return
+
+	return res
 }

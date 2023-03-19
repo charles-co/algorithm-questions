@@ -29,13 +29,13 @@ func TestWordDictionary(t *testing.T) {
 			name:     "Test 3",
 			words:    []string{"a", "ab"},
 			searches: []string{".a", "a", "aa", "a", ".a", "a."},
-			expected: []bool{false, true, false, true, false, false},
+			expected: []bool{false, true, false, true, false, true},
 		},
 		{
 			name:     "Test 4",
 			words:    []string{"a", "ab"},
 			searches: []string{"a", "a.", ".a", ".b", "ab", ".ab", "a.b", "ab.", "a..", ".a.", "..b"},
-			expected: []bool{true, false, false, false, true, false, false, false, false, false, false},
+			expected: []bool{true, true, false, true, true, false, false, false, false, false, false},
 		},
 	}
 
