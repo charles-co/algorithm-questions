@@ -8,7 +8,6 @@ func MinReorder(n int, connections [][]int) int {
 		graph[c[1]] = append(graph[c[1]], -c[0])
 	}
 	
-	// DFS
 	var dfs func(int, int) int
 	dfs = func(node, parent int) int {
 		count := 0
