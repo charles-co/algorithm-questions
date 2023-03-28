@@ -37,6 +37,5 @@ func TestMininumPathSum(t *testing.T){
 				t.Errorf("Expected %v, got %v", tc.expected, actual)
 			}
 		})
-	}
-	
+	}	
 }
