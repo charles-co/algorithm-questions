@@ -33,3 +33,4 @@ func TestOptimalString(t *testing.T) {
 		})
 	}
 }
+
