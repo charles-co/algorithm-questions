@@ -50,4 +50,3 @@ func (n *Node) Search(word string) bool {
 
 	return res
 }
-
